@@ -5,3 +5,4 @@ from tensorflow.keras.applications.resnet import ResNet50
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
+
