@@ -22,92 +22,53 @@
 4. Результаты
 < / p>
 
-<br>
-Загрузка данных 
-
-<class 'pandas.core.frame.DataFrame'>
-
-RangeIndex: 7560 entries, 0 to 7559
-
-Data columns (total 36 columns):
-
- #   Column         Non-Null Count  Dtype  
-
----  ------         --------------  -----  
-
- 0   CArea          7560 non-null   float64
-
- 1   CFFact         7560 non-null   float64
-
- 2   CPolar         7560 non-null   float64
-
- 3   NArea          7560 non-null   float64
-
- 4   NFFact         7560 non-null   float64
-
- 5   NPolar         7560 non-null   float64
-
- 6   NCCave         7560 non-null   float64
-
- 7   NCaveMaxPiece  7560 non-null   float64
-
-8   ODR            7560 non-null   float64
-
-9   ODG            7560 non-null   float64
- 
-10  ODB            7560 non-null   float64
-
- 11  NODR           7560 non-null   float64
-
- 12  NODG           7560 non-null   float64
-
- 13  NODB           7560 non-null   float64
-
- 14  Nucls          7560 non-null   float64
-
- 15  Segms          7560 non-null   float64
-
- 16  Holes          7560 non-null   float64
-
- 17  Tails          7560 non-null   float64
-
- 18  Nucleols       7560 non-null   float64
-
- 19  NuclDensBrd    7560 non-null   float64
-
- 20  NuclZDens      7560 non-null   float64
-
- 21  NuclEuFraq     7560 non-null   float64
-
- 22  NuclEuMeanDF   7560 non-null   float64
-
- 23  NuclEuFFDist   7560 non-null   float64
-
- 24  NuclEuFFChain  7560 non-null   float64
-
- 25  GrODR          7560 non-null   float64
-
- 26  GrODG          7560 non-null   float64
-
- 27  GrODB          7560 non-null   float64
-
- 28  GrODH          7560 non-null   float64
-
- 29  ODRCN          7560 non-null   float64
-
- 30  ODGCN          7560 non-null   float64
-
- 31  ODBCN          7560 non-null   float64
-
- 32  GrRODR         7560 non-null   float64
-
- 33  GrRODG         7560 non-null   float64
-
- 34  GrRODB         7560 non-null   float64
-
- 35  Type_real      7560 non-null   object 
-
-dtypes: float64(35), object(1)
 
 
 <br>
+
+В данных имеются 36 столбцов и 7560 строк. Пропусков в данных не выявлено. 
+
+В ходе анализа данных были выявлены сильные аномалии в столбцах. 
+NCCave, ODB, NODB, GrRODB, CArea, NFFact, NODG, GrODH, ODBCN.
+Анамалии в данных столбцах были устранены. 
+
+Были выявлены столбцы с  мультиколлинеарность 
+
+#NFFact -NCCave
+
+#NArea- NuclEuFFDist
+
+#NuclEuFFChane - NuclEuFFDist
+
+#GrRODR - GrRODG
+Данные столбцы буди удалены 
+#'NCCave','NuclEuFFDist','GrRODG'
+
+Результат ![img_1.png](img_1.png)
+
+Обучение модели. 
+Было обучено две модели: RandomForestClassifier и CatBoostClassifier 
+
+Модель RandomForestClassifier
+Параметры модели  RandomForestClassifier(max_depth=20, n_estimators=500, random_state=42)
+(Параметры подбирались с использованием GridSearchCV)
+Результаты
+
+![img.png](img.png)
+Overall Accuracy: 0.8919667590027701
+Overall Precision: 0.8924125307684136
+Overall Recall: 0.8917908465415643
+
+<br>
+Модель CatBoostClassifier 
+
+Результаты 
+![img_2.png](img_2.png)
+
+Overall Accuracy: 0.8760387811634349
+Overall Precision: 0.8758972783519532
+Overall Recall: 0.8742768929793181
+
+Вывод 
+
+Модель RandomForestClassifier показало более лучшию рабастность чем CatBoostClassifier.

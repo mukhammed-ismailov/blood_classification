@@ -13,8 +13,7 @@ from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import accuracy_score, make_scorer,  precision_score, recall_score
 from matplotlib import pyplot as plt
 from sklearn.ensemble import  RandomForestClassifier
-#from catboost import CatBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
+from catboost import CatBoostClassifier
 from sklearn.metrics import confusion_matrix
 
 
