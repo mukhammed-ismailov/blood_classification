@@ -17,14 +17,17 @@
 
 <p>
 1. Загрузка данных
-2. Анализ данных 
+
+2. Анализ данных
+
 3. Модель обучения
+
 4. Результаты
-< / p>
+</p>
 
-
-
+   
 <br>
+<h4>Загрузка и анализ данных</h4>
 
 В данных имеются 36 столбцов и 7560 строк. Пропусков в данных не выявлено. 
 
@@ -34,17 +37,19 @@ NCCave, ODB, NODB, GrRODB, CArea, NFFact, NODG, GrODH, ODBCN.
 
 Были выявлены столбцы с  мультиколлинеарность 
 
-#NFFact -NCCave
+NFFact -NCCave
 
-#NArea- NuclEuFFDist
+NArea- NuclEuFFDist
 
-#NuclEuFFChane - NuclEuFFDist
+NuclEuFFChane - NuclEuFFDist
 
-#GrRODR - GrRODG
-Данные столбцы буди удалены 
+GrRODR - GrRODG
+Данные столбцы були удалены 
 #'NCCave','NuclEuFFDist','GrRODG'
 
 Результат ![img_1.png](img_1.png)
+
+<h4>Обучение и результат модели </h4>
 
 Обучение модели. 
 Было обучено две модели: RandomForestClassifier и CatBoostClassifier 
