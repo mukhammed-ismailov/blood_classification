@@ -68,8 +68,8 @@ Overall Recall: 0.8917908465415643
 Модель CatBoostClassifier 
 
 Результаты 
-![img_2.png](img_2.png)
 
+![](img_2.png)
 Overall Accuracy: 0.8760387811634349
 Overall Precision: 0.8758972783519532
 Overall Recall: 0.8742768929793181
