@@ -120,7 +120,7 @@ param_grid = {
 CV_rfc = GridSearchCV(estimator=rfc, param_grid=param_grid, cv= 3, verbose=True)
 
 CV_rfc.fit(feature_train, target_train)
-print('RandomForestClassifier best estimator', CV_rfc.best_estimator_)
+print('RandomForestClassifier best params', CV_rfc.best_params_)
 
 pred_rfr = CV_rfc.predict(feature_test)
 
